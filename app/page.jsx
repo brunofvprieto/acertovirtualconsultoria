@@ -27,6 +27,7 @@ function Nav() {
     ["#metodo", "Método HACE"],
     ["#treinamento", "Treinamento"],
     ["#resultados", "Resultados"],
+    ["#depoimentos", "Depoimentos"],
     ["#contato", "Contato"],
   ];
   return (
@@ -63,32 +64,46 @@ function Hero() {
       </div>
       {/* filete dourado no topo, como a gola da camisa */}
       <div className="h-1 w-full bg-gradient-to-r from-dourado via-dourado-light to-dourado" />
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <p className="eyebrow reveal">
-          Acerto Virtual · Consultoria &amp; Treinamento em Atendimento
-        </p>
-        <h1 className="reveal mt-6 max-w-3xl font-display text-4xl leading-[1.12] md:text-6xl">
-          Excelência em gestão e{" "}
-          <span className="text-dourado-light">atendimento humanizado</span>
-        </h1>
-        <p className="reveal mt-6 max-w-2xl text-base font-light text-offwhite/80 md:text-lg">
-          Uma proposta de transformação para o atendimento em clínicas,
-          consultórios e hospitais — com metodologia própria, validada em
-          centenas de instituições por todo o Brasil.
-        </p>
-        <div className="reveal mt-10 flex flex-wrap gap-4">
-          <a
-            href="#metodo"
-            className="rounded-md bg-dourado px-8 py-3.5 text-sm font-semibold text-bordo-dark transition-transform hover:-translate-y-0.5"
-          >
-            Conheça o Método HACE
-          </a>
-          <a
-            href="#contato"
-            className="rounded-md border border-offwhite/30 px-8 py-3.5 text-sm font-semibold text-offwhite transition-colors hover:border-dourado hover:text-dourado-light"
-          >
-            Fale conosco
-          </a>
+      <div className="mx-auto grid max-w-6xl items-end gap-x-8 px-6 pt-20 md:grid-cols-[1.1fr,0.9fr] md:pt-24">
+        <div className="pb-16 md:pb-28">
+          <p className="eyebrow reveal">
+            Acerto Virtual · Consultoria &amp; Treinamento em Atendimento
+          </p>
+          <h1 className="reveal mt-6 font-display text-4xl leading-[1.12] md:text-6xl">
+            Excelência em gestão e{" "}
+            <span className="text-dourado-light">atendimento humanizado</span>
+          </h1>
+          <p className="reveal mt-6 max-w-xl text-base font-light text-offwhite/80 md:text-lg">
+            Uma proposta de transformação para o atendimento em clínicas,
+            consultórios e hospitais — com metodologia própria, validada em
+            centenas de instituições por todo o Brasil.
+          </p>
+          <div className="reveal mt-10 flex flex-wrap gap-4">
+            <a
+              href="#metodo"
+              className="rounded-md bg-dourado px-8 py-3.5 text-sm font-semibold text-bordo-dark transition-transform hover:-translate-y-0.5"
+            >
+              Conheça o Método HACE
+            </a>
+            <a
+              href="#contato"
+              className="rounded-md border border-offwhite/30 px-8 py-3.5 text-sm font-semibold text-offwhite transition-colors hover:border-dourado hover:text-dourado-light"
+            >
+              Fale conosco
+            </a>
+          </div>
+        </div>
+        <div className="relative flex items-end justify-center md:justify-end">
+          {/* brilho dourado atrás da Fernanda */}
+          <div
+            aria-hidden
+            className="absolute bottom-0 left-1/2 h-[85%] w-[120%] -translate-x-1/2 rounded-full bg-dourado/20 blur-3xl"
+          />
+          <img
+            src="/fernanda.png"
+            alt="Fernanda Coelho, fundadora da Acerto Virtual"
+            className="relative z-10 w-72 max-w-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)] md:w-[26rem]"
+          />
         </div>
       </div>
     </header>
@@ -132,11 +147,11 @@ function Fernanda() {
         </div>
         <div className="mt-14 grid gap-12 md:grid-cols-[340px,1fr] md:gap-16">
           <figure className="reveal relative aspect-[3/4] overflow-hidden rounded-lg bg-gradient-to-br from-bordo to-bordo-deep">
-            {/* Para usar a foto: salve em /public/fernanda.jpg e troque o span abaixo por:
-                <img src="/fernanda.jpg" alt="Fernanda Coelho" className="h-full w-full object-cover" /> */}
-            <span className="flex h-full items-center justify-center font-display text-8xl italic text-white/20">
-              FC
-            </span>
+            <img
+              src="/fernanda.png"
+              alt="Fernanda Coelho"
+              className="absolute bottom-0 left-1/2 w-[88%] -translate-x-1/2"
+            />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-bordo-deep/95 to-transparent px-5 pb-5 pt-12 text-offwhite">
               <div className="font-display text-lg">Fernanda Coelho</div>
               <div className="mt-0.5 text-[11px] uppercase tracking-[0.16em] text-dourado-light">
@@ -466,6 +481,75 @@ function Modelo() {
   );
 }
 
+/* ---------------- DEPOIMENTOS ---------------- */
+function Depoimentos() {
+  const depoimentos = [
+    [
+      "Dra Louise Montesanti",
+      "A transformação no atendimento foi perfeita. Sinto que ganhei uma parceira para a vida toda.",
+    ],
+    [
+      "Dr Hasten Frota",
+      "A análise de perfil é o diferencial. O relatório que ela faz é muito bem organizado e explicativo.",
+    ],
+    [
+      "Dra Pricila Pessoa",
+      "Foi o melhor investimento que fiz. Ela é treinada com as técnicas certas.",
+    ],
+    [
+      "Dr Daniel Moraes",
+      "Treinamento dinâmico. Agora as secretárias criam processos, convertem e ajudam no crescimento.",
+    ],
+  ];
+  const iniciais = (nome) =>
+    nome
+      .replace(/^Dra? /, "")
+      .split(" ")
+      .map((p) => p[0])
+      .slice(0, 2)
+      .join("");
+  return (
+    <section id="depoimentos" className="bg-creme py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="reveal max-w-2xl">
+          <p className="eyebrow">Quem já viveu essa transformação</p>
+          <h2 className="mt-4 font-display text-4xl text-bordo md:text-5xl">
+            Depoimentos reais
+          </h2>
+        </div>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {depoimentos.map(([nome, texto]) => (
+            <figure
+              key={nome}
+              className="reveal flex flex-col rounded-lg border border-dourado/25 bg-offwhite p-7"
+            >
+              <span
+                aria-hidden
+                className="font-display text-5xl leading-none text-dourado"
+              >
+                &ldquo;
+              </span>
+              <blockquote className="mt-1 flex-1 text-[14.5px] leading-relaxed text-cinza">
+                {texto}
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-3 border-t border-dourado/20 pt-5">
+                {/* Para usar foto: salve em /public/depoimentos/ e troque o div pelas iniciais por
+                    <img src="/depoimentos/arquivo.jpg" alt="" className="h-10 w-10 rounded-full object-cover" /> */}
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-bordo font-display text-sm text-dourado-light">
+                  {iniciais(nome)}
+                </div>
+                <div className="font-display text-[15px] text-bordo">
+                  {nome}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- CTA ---------------- */
 function Contato() {
   return (
@@ -520,12 +604,13 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
-      <Numeros />
       <Fernanda />
+      <Numeros />
       <Metodo />
       <Treinamento />
       <Resultados />
       <Modelo />
+      <Depoimentos />
       <Contato />
       <Footer />
     </>
