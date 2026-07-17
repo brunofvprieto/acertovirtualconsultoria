@@ -202,13 +202,8 @@ function Palestras() {
   return (
     <section className="bg-creme pb-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="reveal max-w-2xl">
-          <p className="eyebrow">Autoridade em cena</p>
-          <h2 className="mt-4 font-display text-3xl text-bordo md:text-4xl">
-            Palestras e congressos pelo Brasil
-          </h2>
-        </div>
-        <div className="mt-10 grid grid-cols-2 gap-3 md:auto-rows-[15rem] md:grid-cols-3 md:gap-4">
+       
+        <div className="grid grid-cols-2 gap-3 md:auto-rows-[15rem] md:grid-cols-3 md:gap-4">
           <div className="reveal relative row-span-2 overflow-hidden rounded-lg">
             <img
               src="/palestras/palestra-1.jpg"
