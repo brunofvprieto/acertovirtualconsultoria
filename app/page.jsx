@@ -146,11 +146,11 @@ function Fernanda() {
           </h2>
         </div>
         <div className="mt-14 grid gap-12 md:grid-cols-[340px,1fr] md:gap-16">
-          <figure className="reveal relative aspect-[3/4] overflow-hidden rounded-lg bg-gradient-to-br from-bordo to-bordo-deep">
+          <figure className="reveal relative aspect-[3/4] overflow-hidden rounded-lg">
             <img
-              src="/fernanda.png"
+              src="/fernanda-bio.jpg"
               alt="Fernanda Coelho"
-              className="absolute bottom-0 left-1/2 w-[88%] -translate-x-1/2"
+              className="absolute inset-0 h-full w-full object-cover"
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-bordo-deep/95 to-transparent px-5 pb-5 pt-12 text-offwhite">
               <div className="font-display text-lg">Fernanda Coelho</div>
