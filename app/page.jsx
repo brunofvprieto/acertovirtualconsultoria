@@ -487,27 +487,24 @@ function Depoimentos() {
     [
       "Dra Louise Montesanti",
       "A transformação no atendimento foi perfeita. Sinto que ganhei uma parceira para a vida toda.",
+      "/depoimentos/louise.jpg",
     ],
     [
       "Dr Hasten Frota",
       "A análise de perfil é o diferencial. O relatório que ela faz é muito bem organizado e explicativo.",
+      "/depoimentos/hasten.jpg",
     ],
     [
       "Dra Pricila Pessoa",
       "Foi o melhor investimento que fiz. Ela é treinada com as técnicas certas.",
+      "/depoimentos/pricila.jpg",
     ],
     [
       "Dr Daniel Moraes",
       "Treinamento dinâmico. Agora as secretárias criam processos, convertem e ajudam no crescimento.",
+      "/depoimentos/daniel.jpg",
     ],
   ];
-  const iniciais = (nome) =>
-    nome
-      .replace(/^Dra? /, "")
-      .split(" ")
-      .map((p) => p[0])
-      .slice(0, 2)
-      .join("");
   return (
     <section id="depoimentos" className="bg-creme py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -518,7 +515,7 @@ function Depoimentos() {
           </h2>
         </div>
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {depoimentos.map(([nome, texto]) => (
+          {depoimentos.map(([nome, texto, foto]) => (
             <figure
               key={nome}
               className="reveal flex flex-col rounded-lg border border-dourado/25 bg-offwhite p-7"
@@ -533,11 +530,11 @@ function Depoimentos() {
                 {texto}
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-dourado/20 pt-5">
-                {/* Para usar foto: salve em /public/depoimentos/ e troque o div pelas iniciais por
-                    <img src="/depoimentos/arquivo.jpg" alt="" className="h-10 w-10 rounded-full object-cover" /> */}
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-bordo font-display text-sm text-dourado-light">
-                  {iniciais(nome)}
-                </div>
+                <img
+                  src={foto}
+                  alt={nome}
+                  className="h-12 w-12 rounded-full border-2 border-dourado/50 object-cover"
+                />
                 <div className="font-display text-[15px] text-bordo">
                   {nome}
                 </div>
