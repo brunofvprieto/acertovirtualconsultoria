@@ -197,6 +197,52 @@ function Fernanda() {
   );
 }
 
+/* ---------------- PALESTRAS ---------------- */
+function Palestras() {
+  return (
+    <section className="bg-creme pb-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="reveal max-w-2xl">
+          <p className="eyebrow">Autoridade em cena</p>
+          <h2 className="mt-4 font-display text-3xl text-bordo md:text-4xl">
+            Palestras e congressos pelo Brasil
+          </h2>
+        </div>
+        <div className="mt-10 grid grid-cols-2 gap-3 md:auto-rows-[15rem] md:grid-cols-3 md:gap-4">
+          <div className="reveal relative row-span-2 overflow-hidden rounded-lg">
+            <img
+              src="/palestras/palestra-1.jpg"
+              alt="Fernanda Coelho palestrando"
+              className="h-64 w-full object-cover md:h-full transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+          <div className="reveal relative col-span-2 overflow-hidden rounded-lg">
+            <img
+              src="/palestras/palestra-2.jpg"
+              alt="Fernanda Coelho no evento Soluções para Médicos"
+              className="h-48 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-full"
+            />
+          </div>
+          <div className="reveal relative overflow-hidden rounded-lg">
+            <img
+              src="/palestras/palestra-3.jpg"
+              alt="Fernanda Coelho em palestra para a área da saúde"
+              className="h-48 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-full"
+            />
+          </div>
+          <div className="reveal relative overflow-hidden rounded-lg">
+            <img
+              src="/palestras/palestra-4.jpg"
+              alt="Fernanda Coelho apresentando em congresso"
+              className="h-48 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- MÉTODO HACE ---------------- */
 function Metodo() {
   const pilares = [
@@ -602,6 +648,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Fernanda />
+      <Palestras />
       <Numeros />
       <Metodo />
       <Treinamento />
